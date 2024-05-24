@@ -25,6 +25,8 @@ return haystack.filter(item => Object.entries(needles).every(([key, value]) => !
    1. Target: = ~.Parameters.Output.Result
    2. Value: = ~.Javascript
 
+![global script setup](images/global-script-setup.png)
+
 ## Usage
 1. Best practice is to create a Type that reflects the objects and contains its' properties
 2. Create a List of that type
