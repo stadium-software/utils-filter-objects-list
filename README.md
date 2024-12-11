@@ -14,7 +14,7 @@ A script to filter a list of objects by any number of object properties. Lists c
 3. Add the output parameter below to the Global Script
    1. Result
 4. Drag a *JavaScript* action into the script
-5. Add the Javascript below into the JavaScript code property
+5. Add the Javascript below unchanged into the JavaScript code property
 ```javascript
 /* Stadium Script v1.0 https://github.com/stadium-software/utils-filter-objects-list */
 let haystack = ~.Parameters.Input.List;
