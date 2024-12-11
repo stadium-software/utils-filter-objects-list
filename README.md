@@ -132,7 +132,7 @@ return haystack.filter(item => Object.entries(needles).every(([key, value]) => !
 	"instrument": "voice",
 	"living": "false"
 }]
-   ```
+```
    2. Property: An object that contains the filter criteria, for example:
 ```json
 { "instrument": "guitar" }
