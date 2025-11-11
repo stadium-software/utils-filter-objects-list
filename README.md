@@ -3,8 +3,7 @@
 A script to filter a list of objects by any number of object properties. Lists can be filtered by immediate properties, not properties of type Object or List. 
 
 # Version 
-
-1.0 Initial
+1.1 Enhanced the script to cater for null parameters and booleans
 
 # Global Script Setup
 1. Create a Global Script called "FilterObjectsList"
@@ -16,10 +15,15 @@ A script to filter a list of objects by any number of object properties. Lists c
 4. Drag a *JavaScript* action into the script
 5. Add the Javascript below unchanged into the JavaScript code property
 ```javascript
-/* Stadium Script v1.0 https://github.com/stadium-software/utils-filter-objects-list */
-let haystack = ~.Parameters.Input.List;
-let needles = ~.Parameters.Input.Properties;
-return haystack.filter(item => Object.entries(needles).every(([key, value]) => !value || item[key] === value));
+/* Stadium Script v1.1 https://github.com/stadium-software/utils-filter-objects-list */
+let haystack = ~.Parameters.Input.List || [];
+let needles = ~.Parameters.Input.Properties || {};
+return haystack.filter(item =>
+  Object.entries(needles)
+    .every(([key, value]) =>
+      value === undefined || item[key] === value
+    )
+);
 ```
 6. Drag a *SetValue* action into the Global Script and place it under the *JavaScript* action
    1. Target: = ~.Parameters.Output.Result
